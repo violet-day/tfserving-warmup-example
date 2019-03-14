@@ -30,7 +30,7 @@ def placeholder_to_random_tensor(placeholder_tensor, magic_dim=6):
   """
   shape = placeholder_tensor.get_shape().as_list()
   shape = [magic_dim if s is None else s for s in shape]
-  return tf.random_normal(shape=shape, dtype=placeholder_tensor.dtype)
+  return tf.ones(shape=shape, dtype=placeholder_tensor.dtype)
 
 
 def load_saved_model(sess, export_dir):
