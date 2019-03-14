@@ -1,6 +1,6 @@
 import os
 import tensorflow as tf
-from tensorflow import saved_model
+from tensorflow.python import saved_model
 from tensorflow_serving.apis import model_pb2
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_log_pb2

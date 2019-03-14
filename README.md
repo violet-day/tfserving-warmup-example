@@ -9,7 +9,7 @@
 
 ```
 tensorflow==1.8.0
-tensorflow-serving-api==1.8.0
+tensorflow-serving-api==1.12.0
 ```
 
 ### export sample model
