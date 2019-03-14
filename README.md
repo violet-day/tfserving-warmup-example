@@ -1,12 +1,16 @@
+## Background
 
-## Requirements
+* [Latency high after loading a new model](https://github.com/tensorflow/serving/issues/385)
+* [How to prepare warmup request file for tensorflow serving?](https://stackoverflow.com/questions/51980407/how-to-prepare-warmup-request-file-for-tensorflow-serving)
+
+## TFServing Warmup Example
+
+### requirements
 
 ```
 tensorflow==1.8.0
-tensorflow-serving-api==1.8.0==1.8.0
+tensorflow-serving-api==1.8.0
 ```
-
-## Example
 
 ### export sample model
 
@@ -34,6 +38,8 @@ cd /work
 tensorflow_model_server --model_config_file=model.config --platform_config_file=platform.config
 ```
 
+### logs
+
 ```log
 root@1d26b7f44fc4:/work# tensorflow_model_server --model_config_file=model.config --platform_config_file=platform.config
 2019-03-14 02:55:12.702456: I tensorflow_serving/model_servers/server_core.cc:444] Adding/updating models.
@@ -52,4 +58,6 @@ root@1d26b7f44fc4:/work# tensorflow_model_server --model_config_file=model.confi
 2019-03-14 02:55:12.932273: I tensorflow_serving/core/loader_harness.cc:86] Successfully loaded servable version {name: demo version: 0}
 2019-03-14 02:55:12.934373: I tensorflow_serving/model_servers/main.cc:323] Running ModelServer at 0.0.0.0:8500 ...
 ```
+
+See `Finished reading warmup data for model ....` make sure warmup done
 
